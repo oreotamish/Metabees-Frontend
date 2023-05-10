@@ -1,8 +1,9 @@
-'use client'
+// 'use client'
 
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 
 const menuItems = [
   {
@@ -28,6 +29,10 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  function handleClick(e) {
+    console.log('clicked!')
   }
 
   return (
@@ -129,7 +134,7 @@ const Navbar = () => {
                   </nav>
                 </div>
                 <button type="button" className="login-btn">
-                  <span>Sign In</span>
+                  <a href="/signin"><span>Sign In</span></a>
                 </button>
               </div>
             </div>
