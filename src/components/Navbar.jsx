@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import './Navbar.css'
-import { Link } from 'react-router-dom'
+
 
 const menuItems = [
   {
@@ -31,9 +31,6 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  function handleClick(e) {
-    console.log('clicked!')
-  }
 
   return (
     <div className="relative w-full bg-white">
