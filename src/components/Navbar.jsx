@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import './Navbar.css'
 
+
 const menuItems = [
   {
     name: 'Home',
@@ -29,6 +30,7 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
+
 
   return (
     <div className="relative w-full bg-white">
@@ -129,7 +131,7 @@ const Navbar = () => {
                   </nav>
                 </div>
                 <button type="button" className="login-btn">
-                  <span>Sign In</span>
+                  <a href="/signin"><span>Sign In</span></a>
                 </button>
               </div>
             </div>
