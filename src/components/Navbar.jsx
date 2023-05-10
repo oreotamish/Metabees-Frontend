@@ -48,15 +48,18 @@ const Navbar = () => {
               />
             </svg>
           </span>
-          <span className="font-bold">Metabees</span>
+          <a href="/" className="font-bold">
+            Metabees
+          </a>
         </div>
+
         <div className="hidden lg:block">
           <ul className="inline-flex space-x-8">
             {menuItems.map((item) => (
               <li key={item.name}>
                 <a
                   href={item.href}
-                  className="text-sm font-semibold text-gray-800 hover:text-gray-900"
+                  className="text-sm font-semibold text-gray-800 hover:text-gray-900 nav-items"
                 >
                   {item.name}
                 </a>
@@ -72,6 +75,9 @@ const Navbar = () => {
         <div className="lg:hidden">
           <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
         </div>
+
+        {/* Smaller Screens */}
+
         {isMenuOpen && (
           <div className="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition lg:hidden">
             <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
@@ -92,7 +98,9 @@ const Navbar = () => {
                         />
                       </svg>
                     </span>
-                    <span className="font-bold">Metabees</span>
+                    <a href="/" className="font-bold">
+                      Metabees
+                    </a>
                   </div>
                   <div className="-mr-2">
                     <button
@@ -111,7 +119,7 @@ const Navbar = () => {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50"
+                        className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50 nav-items"
                       >
                         <span className="ml-3 text-base font-medium text-gray-900">
                           {item.name}
