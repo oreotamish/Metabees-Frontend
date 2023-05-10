@@ -2,21 +2,22 @@ import React from 'react'
 import { ArrowRight } from 'lucide-react'
 
 export default function SignUp() {
-
   function handleClick(e) {
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
 
-    console.log(name,email,password)
+    console.log(name, email, password)
   }
   return (
     <section>
       <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
           <div className="mb-2 flex justify-center ">
-            
-            <span className='bg-clip-text text-transparent text-6xl bg-gradient-to-r from-purple-800 to-pink-600'> Metabees</span>
+            <span className="bg-clip-text text-transparent text-6xl bg-gradient-to-r from-[#540ba8] to-pink-800">
+              {' '}
+              Metabees
+            </span>
           </div>
           <h2 className="text-center text-2xl font-bold leading-tight text-black">
             Sign up to create account
@@ -24,7 +25,7 @@ export default function SignUp() {
           <p className="mt-2 text-center text-base text-gray-600">
             Already have an account?{' '}
             <a
-              href="/signin"
+              href="/log-in"
               title=""
               className="font-medium text-black transition-all duration-200 hover:underline"
             >
@@ -34,7 +35,10 @@ export default function SignUp() {
           <form action="#" method="POST" className="mt-8">
             <div className="space-y-5">
               <div>
-                <label htmlFor="name" className="text-base font-medium text-gray-900">
+                <label
+                  htmlFor="name"
+                  className="text-base font-medium text-gray-900"
+                >
                   {' '}
                   Full Name{' '}
                 </label>
@@ -48,7 +52,10 @@ export default function SignUp() {
                 </div>
               </div>
               <div>
-                <label htmlFor="email" className="text-base font-medium text-gray-900">
+                <label
+                  htmlFor="email"
+                  className="text-base font-medium text-gray-900"
+                >
                   {' '}
                   Email address{' '}
                 </label>
@@ -63,7 +70,10 @@ export default function SignUp() {
               </div>
               <div>
                 <div className="flex items-center justify-between">
-                  <label htmlFor="password" className="text-base font-medium text-gray-900">
+                  <label
+                    htmlFor="password"
+                    className="text-base font-medium text-gray-900"
+                  >
                     {' '}
                     Password{' '}
                   </label>
@@ -79,9 +89,9 @@ export default function SignUp() {
               </div>
               <div>
                 <button
-                onClick={handleClick}
+                  onClick={handleClick}
                   type="button"
-                  className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                  className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-[#540ba8]"
                 >
                   Create Account <ArrowRight className="ml-2" size={16} />
                 </button>
@@ -105,7 +115,6 @@ export default function SignUp() {
               </span>
               Sign up with Google
             </button>
-            
           </div>
         </div>
       </div>

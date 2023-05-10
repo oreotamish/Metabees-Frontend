@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import './Navbar.css'
-
 
 const menuItems = [
   {
@@ -25,12 +25,12 @@ const menuItems = [
 ]
 
 const Navbar = () => {
+  const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
-
 
   return (
     <div className="relative w-full bg-white">
@@ -70,7 +70,11 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden lg:block">
-          <button type="button" className="login-btn">
+          <button
+            type="button"
+            className="login-btn"
+            onClick={() => navigate('/sign-up')}
+          >
             <span>Sign In</span>
           </button>
         </div>
@@ -131,7 +135,9 @@ const Navbar = () => {
                   </nav>
                 </div>
                 <button type="button" className="login-btn">
-                  <a href="/signin"><span>Sign In</span></a>
+                  <a href="/signin">
+                    <span>Sign In</span>
+                  </a>
                 </button>
               </div>
             </div>
