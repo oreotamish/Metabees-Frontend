@@ -1,13 +1,13 @@
 import React from "react";
 
-import "./LogIn2.css";
+import "./SignUp.css";
 
-function LogIn2() {
+function SignUp() {
   return (
     <div class="card">
       <div class="card2">
         <form class="form">
-          <p id="heading">Login</p>
+          <p id="heading">Sign Up</p>
           <div class="field">
             <svg
               viewBox="0 0 16 16"
@@ -39,17 +39,34 @@ function LogIn2() {
             </svg>
             <input type="password" class="input-field" placeholder="Password" />
           </div>
-          <div class="btn">
-            <button class="button1">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <button class='button2 mt-6'>Sign Up</button>
+        <div className="mb-5">
+            <button
+              type="button"
+              className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
+            >
+              <span className="mr-2 inline-block">
+                <svg
+                  className="h-6 w-6 text-rose-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M20.283 10.356h-8.327v3.451h4.792c-.446 2.193-2.313 3.453-4.792 3.453a5.27 5.27 0 0 1-5.279-5.28 5.27 5.27 0 0 1 5.279-5.279c1.259 0 2.397.447 3.29 1.178l2.6-2.599c-1.584-1.381-3.615-2.233-5.89-2.233a8.908 8.908 0 0 0-8.934 8.934 8.907 8.907 0 0 0 8.934 8.934c4.467 0 8.529-3.249 8.529-8.934 0-.528-.081-1.097-.202-1.625z"></path>
+                </svg>
+              </span>
+              Sign up with Google
             </button>
-            <button class="button2">Sign Up</button>
+
+            <div className="flex mt-4">
+                <p className="text-cyan-500"> already have an account?</p> <button className="button1">Log In</button>
+            </div>
           </div>
-          <button class="button3">Forgot Password</button>
         </form>
       </div>
     </div>
   );
 }
 
-export default LogIn2;
+export default SignUp;

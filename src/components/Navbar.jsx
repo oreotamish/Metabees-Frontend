@@ -20,7 +20,7 @@ const menuItems = [
   },
   {
     name: 'Pricing',
-    href: '#',
+    href: '/pricing',
   },
 ]
 
