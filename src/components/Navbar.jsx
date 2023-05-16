@@ -112,7 +112,7 @@ function Navbar() {
                 </div>
                 <button
                   type="button"
-                  className="login-btn"
+                  className="login-btn mt-5"
                   onClick={() => navigate('/signup')}
                 >
                   Sign Up
