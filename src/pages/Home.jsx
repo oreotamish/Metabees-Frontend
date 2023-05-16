@@ -30,7 +30,7 @@ function Home() {
       {/* Device Support Slide */}
       <div className="relative w-full h-full flex flex-col">
         <h1 className="m-auto text-white font-bold">Multi Device Support</h1>
-        <div className="flex flex-row">
+        <div className="flex flex-col lg:flex-row">
           <div class="main-card">
             <div class="sub-card text-white font-bold">PC</div>
           </div>
