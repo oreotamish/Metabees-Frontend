@@ -1,6 +1,8 @@
 import React from 'react'
 import bgVideo from '../assets/homeBg.mp4'
 import './Home.css'
+import Footer from '../components/Footer'
+import Pricing from './Pricing'
 
 function Home() {
   return (
@@ -28,9 +30,9 @@ function Home() {
       </div>
 
       {/* Device Support Slide */}
-      <div className="relative w-full h-full flex flex-col">
+      <div className="mt-10 relative w-full h-full flex flex-col overflow-x-hidden">
         <h1 className="m-auto text-white font-bold">Multi Device Support</h1>
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row p-6">
           <div class="main-card">
             <div class="sub-card text-white font-bold">PC</div>
           </div>
@@ -47,6 +49,8 @@ function Home() {
       </div>
 
       {/* Powered By Slide */}
+      <Pricing />
+      <Footer />
     </>
   )
 }
