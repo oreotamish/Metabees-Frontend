@@ -8,7 +8,7 @@ import './Navbar.css'
 const menuItems = [
   {
     name: 'View',
-    href: '#',
+    href: '/view',
   },
   {
     name: 'About',
@@ -27,11 +27,9 @@ function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
-
+  console.log(window.location)
   return (
-
     <div className="sticky top-0 z-10 w-full bg-transparent overflow-x-hidden">
-
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <a href="/" className="text-white hover:text-[#6e25c0] font-bold">
@@ -42,23 +40,26 @@ function Navbar() {
           <ul className="inline-flex space-x-8">
             {menuItems.map((item) => (
               <li key={item.name}>
-                {item.name==="Pricing"?(
-                  <span className="text-sm font-semibold text-white hover:text-[#6e25c0] cursor-pointer"
-                  onClick={()=>{
-                    window.scrollTo({
-                      top: 1150,
-                      behavior: 'smooth',
-                  });
-                  }}
+                {window.location.pathname === '/' && item.name === 'Pricing' ? (
+                  <span
+                    className="text-sm font-semibold text-white hover:text-[#6e25c0] cursor-pointer"
+                    onClick={() => {
+                      window.scrollTo({
+                        top: 1150,
+                        behavior: 'smooth',
+                      })
+                    }}
                   >
-                      {item.name}
+                    {item.name}
                   </span>
-                ):(<a
-                  href={item.href}
-                  className="text-sm font-semibold text-white hover:text-[#6e25c0]"
-                >
-                  {item.name}
-                </a>)}
+                ) : (
+                  <a
+                    href={item.href}
+                    className="text-sm font-semibold text-white hover:text-[#6e25c0]"
+                  >
+                    {item.name}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
