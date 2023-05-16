@@ -59,9 +59,9 @@ function SignUp() {
               Sign up with Google
             </button>
 
-            <div className="flex mt-4">
+            <div className="flex flex-col items-center mt-4">
               <p className="text-cyan-500"> Already Have An Account?</p>{' '}
-              <button className="button1" onClick={() => navigate('/log-in')}>
+              <button className="button1" onClick={() => navigate('/login')}>
                 Log In
               </button>
             </div>

@@ -41,7 +41,7 @@ function LogIn() {
           </div>
           <div class="btn">
             <button class="button1 mr-1">Login</button>
-            <button class="button1 ml-1" onClick={() => navigate('/sign-up')}>
+            <button class="button1 ml-1" onClick={() => navigate('/signup')}>
               Sign Up
             </button>
           </div>
