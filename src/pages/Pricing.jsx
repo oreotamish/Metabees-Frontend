@@ -6,6 +6,7 @@ function Pricing() {
       className="relative overflow-hidden py-10"
       style={{
         backgroundColor: '#000000',
+        marginTop: '100px',
       }}
     >
       <div className="relative mx-auto max-w-7xl px-4">

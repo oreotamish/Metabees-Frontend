@@ -4,7 +4,7 @@ import './SignUp.css'
 function SignUp() {
   const navigate = useNavigate()
   return (
-    <div class="card">
+    <div class="signup-card">
       <div class="card2">
         <form class="form">
           <p id="heading">Sign Up</p>
@@ -43,6 +43,9 @@ function SignUp() {
           <button class="button2 mt-6">Sign Up</button>
           <div className="mb-5">
             <button
+              onClick={() => {
+                window.location.href = '//www.google.com'
+              }}
               type="button"
               className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
             >

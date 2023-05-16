@@ -11,7 +11,7 @@ function Home() {
           <source src={bgVideo} type="video/mp4" />
         </video>
         <div className="bg-transparent text-white video-content">
-          <h1 className="font-bold text-3xl">
+          <h1 className="sm:font-bold sm:text-3xl">
             <span className="text-[#6e25c0]">
               T<span className="text-[#853fd6]">h</span>
               <span className="text-[#8c4ad8]">e</span>
