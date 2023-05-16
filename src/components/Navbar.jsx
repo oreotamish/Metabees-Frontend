@@ -29,7 +29,7 @@ function Navbar() {
   }
 
   return (
-    <div className="fixed top-0 z-10 w-full bg-transparent">
+    <div className="sticky top-0 z-10 w-full bg-transparent">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <a href="/" className="text-white hover:text-[#6e25c0] font-bold">
