@@ -5,7 +5,6 @@ import LogIn from './pages/LogIn'
 import Pricing from './pages/Pricing'
 import Home from './pages/Home'
 
-
 function App() {
   return (
     <>
