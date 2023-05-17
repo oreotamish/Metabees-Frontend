@@ -22,7 +22,7 @@ function LogIn() {
             <input
               type="text"
               class="input-field"
-              placeholder="Username"
+              placeholder="Full Name"
               autocomplete="off"
             />
           </div>
