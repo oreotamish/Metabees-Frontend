@@ -1,13 +1,12 @@
-import React from 'react'
 import bgVideo from '../assets/homeBg.mp4'
 import './Home.css'
-import Footer from '../components/Footer'
 import Pricing from './Pricing'
+import Footer from '../components/Footer'
 
 function Home() {
   return (
-    <>
-      {/* Video Slide */}
+    <div>
+      {/* Home Video */}
       <div className="video-container">
         <video autoPlay loop muted className="video-background">
           <source src={bgVideo} type="video/mp4" />
@@ -29,29 +28,55 @@ function Home() {
         </div>
       </div>
 
-      {/* Device Support Slide */}
+      {/* Device Support */}
       <div className="mt-10 relative w-full h-full flex flex-col overflow-x-hidden">
-        <h1 className="m-auto text-white font-bold">Multi Device Support</h1>
+        <h1 className="m-auto font-bold text-[#864bc9] text-2xl">
+          Multi Device Support
+        </h1>
         <div className="flex flex-col lg:flex-row p-6">
           <div class="main-card">
-            <div class="sub-card text-white font-bold">PC</div>
+            <div class="sub-card text-white font-bold">Desktop / Laptop</div>
           </div>
           <div class="main-card">
-            <div class="sub-card text-white font-bold">Mobile</div>
+            <div class="sub-card text-white font-bold">Smart Phone</div>
           </div>
           <div class="main-card">
             <div class="sub-card text-white font-bold">Tablet</div>
           </div>
           <div class="main-card">
-            <div class="sub-card text-white font-bold">VR</div>
+            <div class="sub-card text-white font-bold">VR Headset</div>
           </div>
         </div>
       </div>
 
-      {/* Powered By Slide */}
+      {/* Pricing */}
+
       <Pricing />
+
+      {/* Powered By */}
+
+      <div className="mt-10 relative w-full h-full flex flex-col items-center justify-center overflow-x-hidden">
+        <h1 className="m-auto mb-5 text-[#864bc9] font-bold text-2xl">
+          Powered By
+        </h1>
+        <div className="flex flex-col lg:flex-row items-center justify-center p-6">
+          <img
+            className="w-1/2 lg:w-1/4 m-auto"
+            src="https://images.pexels.com/photos/8998295/pexels-photo-8998295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="PC"
+          />
+          <img
+            className="w-1/2 lg:w-1/4 m-auto"
+            src="https://images.pexels.com/photos/8998292/pexels-photo-8998292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Mobile"
+          />
+        </div>
+      </div>
+
+      {/* Footer */}
+
       <Footer />
-    </>
+    </div>
   )
 }
 

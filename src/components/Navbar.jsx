@@ -24,12 +24,28 @@ function Navbar() {
   const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const [color, setColor] = useState(false)
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor(true)
+    } else {
+      setColor(false)
+    }
+  }
+  window.addEventListener('scroll', changeColor)
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
-  console.log(window.location)
+
   return (
-    <div className="sticky top-0 z-10 w-full bg-transparent overflow-x-hidden">
+    <div
+      className={
+        color
+          ? 'sticky top-0 z-10 w-full bg-[#110520] bg-opacity-80 overflow-x-hidden'
+          : 'sticky top-0 z-10 w-full bg-transparent overflow-x-hidden'
+      }
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <a href="/" className="text-white hover:text-[#6e25c0] font-bold">
