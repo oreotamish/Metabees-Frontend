@@ -5,7 +5,7 @@ function SignUp() {
   const navigate = useNavigate()
   return (
     <div class="signup-card">
-      <div class="card2">
+      <div class="signup-card2">
         <form class="form">
           <p id="heading">Sign Up</p>
           <div class="field">
