@@ -5,7 +5,7 @@ function LogIn() {
   const navigate = useNavigate()
   return (
     <div class="login-card">
-      <div class="card2">
+      <div class="login-card2">
         <form class="form">
           <p id="heading">Login</p>
           <div class="field">
@@ -42,7 +42,7 @@ function LogIn() {
           <div class="btn">
             <button class="button1 mr-1">Login</button>
             <button class="button1 ml-1" onClick={() => navigate('/signup')}>
-              Sign Up
+              Sign Up Instead
             </button>
           </div>
           <button class="button3">Forgot Password</button>

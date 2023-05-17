@@ -42,8 +42,8 @@ function Navbar() {
     <div
       className={
         color
-          ? 'sticky top-0 z-10 w-full bg-[#110520] bg-opacity-80 overflow-x-hidden'
-          : 'sticky top-0 z-10 w-full bg-transparent overflow-x-hidden'
+          ? 'fixed top-0 z-10 w-full bg-[#110520] bg-opacity-80 overflow-x-hidden'
+          : 'fixed top-0 z-10 w-full bg-transparent overflow-x-hidden'
       }
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
