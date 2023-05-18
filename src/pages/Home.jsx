@@ -56,7 +56,7 @@ function Home() {
 
       {/* Powered By */}
 
-      <div className="mt-10 mb-2 relative w-full h-full flex flex-col items-center justify-center overflow-x-hidden">
+      <div className="mt-10 relative w-full h-full flex flex-col items-center justify-center overflow-x-hidden">
         <h1 className="m-auto mb-5 text-[#864bc9] font-bold text-2xl">
           Powered By
         </h1>
@@ -75,7 +75,7 @@ function Home() {
       </div>
 
       {/* Multiple Worlds */}
-      <div className="video-container">
+      <div className="mt-10 video-container">
         <video autoPlay loop muted className="video-background">
           <source src={multipleWorlds} type="video/mp4" />
         </video>
