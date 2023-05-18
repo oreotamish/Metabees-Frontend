@@ -6,6 +6,7 @@ import Pricing from './pages/Pricing'
 import Home from './pages/Home'
 import View from './pages/View'
 import PricePage from './pages/PricePage'
+import About from './pages/About'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/view" element={<View />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/pricing/:id" element={<PricePage />} />
