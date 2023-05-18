@@ -1,7 +1,8 @@
 import bgVideo from '../assets/homeBg.mp4'
-import './Home.css'
+import multipleWorlds from '../assets/multipleWorlds.mp4'
 import Pricing from './Pricing'
 import Footer from '../components/Footer'
+import './Home.css'
 
 function Home() {
   return (
@@ -55,7 +56,7 @@ function Home() {
 
       {/* Powered By */}
 
-      <div className="mt-10 relative w-full h-full flex flex-col items-center justify-center overflow-x-hidden">
+      <div className="mt-10 mb-2 relative w-full h-full flex flex-col items-center justify-center overflow-x-hidden">
         <h1 className="m-auto mb-5 text-[#864bc9] font-bold text-2xl">
           Powered By
         </h1>
@@ -70,6 +71,25 @@ function Home() {
             src="https://images.pexels.com/photos/8998292/pexels-photo-8998292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Mobile"
           />
+        </div>
+      </div>
+
+      {/* Multiple Worlds */}
+      <div className="video-container">
+        <video autoPlay loop muted className="video-background">
+          <source src={multipleWorlds} type="video/mp4" />
+        </video>
+        <div className="bg-transparent text-white video-content">
+          <h1 className="sm:font-bold sm:text-3xl">
+            <span className="text-[#915cce]">
+              MUL<span className="text-[#853fd6]">TI</span>
+              <span className="text-[#8c4ad8]">PLE</span>
+            </span>
+            <span className="text-[#9957e6]"> W</span>
+            <span className="text-[#8041c7]">O</span>
+            <span className="text-[#8153b6]">RL</span>
+            <span className="text-[#853cda]">DS</span>
+          </h1>
         </div>
       </div>
 
