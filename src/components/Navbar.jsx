@@ -1,53 +1,49 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { useNavigate } from "react-router";
-import { Menu, X } from "lucide-react";
-import "./Navbar.css";
+import { useState } from 'react'
+import { useNavigate } from 'react-router'
+import { Menu, X } from 'lucide-react'
+import './Navbar.css'
 
 const menuItems = [
   {
-    name: "View",
-    href: "/view",
+    name: 'View',
+    href: '/view',
   },
   {
-    name: "About",
-    href: "/about",
+    name: 'About',
+    href: '/about',
   },
   {
-    name: "Pricing",
-    href: "/pricing",
+    name: 'Pricing',
+    href: '/pricing',
   },
-];
+]
 
 function Navbar() {
-  const url = window.location.pathname.substring(1);
-  console.log(url);
-  const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const [color, setColor] = useState(false);
+  const [color, setColor] = useState(false)
   const changeColor = () => {
     if (window.scrollY >= 90) {
-      setColor(true);
+      setColor(true)
     } else {
-      setColor(false);
+      setColor(false)
     }
-  };
-  window.addEventListener("scroll", changeColor);
+  }
+  window.addEventListener('scroll', changeColor)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
-  return url === "login" || url === "signup" ? (
-    <></>
-  ) : (
+  return (
     <div
       className={
         color
-          ? "sticky top-0 z-10 w-full bg-[#110520] bg-opacity-80 overflow-x-hidden"
-          : "sticky top-0 z-10 w-full bg-transparent overflow-x-hidden"
+          ? 'fixed top-0 z-10 w-full bg-[#110520] bg-opacity-80 overflow-x-hidden'
+          : 'fixed top-0 z-10 w-full bg-transparent overflow-x-hidden'
       }
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
@@ -60,29 +56,31 @@ function Navbar() {
           <ul className="inline-flex space-x-8">
             {menuItems.map((item) => (
               <li key={item.name}>
-                {window.location.pathname === "/" && item.name === "Pricing" ? (
+                {window.location.pathname === '/' && item.name === 'Pricing' ? (
                   <span
                     className="text-sm font-semibold text-white hover:text-[#6e25c0] cursor-pointer"
                     onClick={() => {
                       window.scrollTo({
                         top: 1150,
-                        behavior: "smooth",
-                      });
+                        behavior: 'smooth',
+                      })
                     }}
                   >
                     {item.name}
                   </span>
                 ) : (
                   <a
-                    href={window.location.pathname === "/view" &&
-                    item.name === "View"
-                      ? "/"
-                      : item.href}
+                    href={
+                      window.location.pathname === '/view' &&
+                      item.name === 'View'
+                        ? '/'
+                        : item.href
+                    }
                     className="text-sm font-semibold text-white hover:text-[#6e25c0]"
                   >
-                    {window.location.pathname === "/view" &&
-                    item.name === "View"
-                      ? "Home"
+                    {window.location.pathname === '/view' &&
+                    item.name === 'View'
+                      ? 'Back to Home'
                       : item.name}
                   </a>
                 )}
@@ -94,7 +92,7 @@ function Navbar() {
           <button
             type="button"
             className="login-btn"
-            onClick={() => navigate("/signup")}
+            onClick={() => navigate('/signup')}
           >
             Sign Up
           </button>
@@ -106,7 +104,7 @@ function Navbar() {
           />
         </div>
         {isMenuOpen && (
-          <div className="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition lg:hidden">
+          <div className="relative inset-x-0 top-0 z-50 origin-top-right transform p-2 transition lg:hidden">
             <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
               <div className="px-5 pb-6 pt-5">
                 <div className="flex items-center justify-between">
@@ -156,7 +154,7 @@ function Navbar() {
                 <button
                   type="button"
                   className="login-btn mt-5"
-                  onClick={() => navigate("/signup")}
+                  onClick={() => navigate('/signup')}
                 >
                   Sign Up
                 </button>
@@ -166,7 +164,7 @@ function Navbar() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

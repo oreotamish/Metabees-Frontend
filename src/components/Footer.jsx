@@ -18,7 +18,7 @@ function Footer() {
               <li className="p-5">
                 <a
                   className="font-medium text-white hover:font-bold hover:text-[#19A7CE]"
-                  href="#"
+                  href="/about"
                 >
                   About
                 </a>
