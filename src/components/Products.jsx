@@ -1,44 +1,42 @@
-import { useState } from 'react'
-import SimpleImageSlider from 'react-simple-image-slider'
 export default function Products() {
-  const [imageNum, setImageNum] = useState(1)
-  const sliderImages = [
-    {
-      url: 'https://img.freepik.com/free-photo/wide-angle-shot-singletree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg',
-    },
-    {
-      url: 'https://thumbs.dreamstime.com/b/lone-tree-meadow-sunriseidyllic-fabulous-landscapes-39659821.jpg',
-    },
-    {
-      url: 'https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcSprPgYofGmXXPfuEDcZ_XI294n0bME5dTX9TGvINmPiA&s',
-    },
-    {
-      url: 'https://i.pinimg.com/474x/81/ca/47/81ca47eaae35615ba9a9bb57560aaa3c.jpg',
-    },
-    {
-      url: 'https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTof2fniv0mZzN8DByLmb6ILU4MvV_SGr_wptMeAut_dPaYMBkeHnHhD5egzU7MB0GSqE&usqp=CAU',
-    },
-  ]
   return (
-    <div className="mt-10 relative w-full h-full flex flex-col items-center overflow-x-hidden">
-      <h1 className="text-3xl font-bold mb-5 text-[#864bc9]">
-        Products We Offer
-      </h1>
-      <SimpleImageSlider
-        className="w-full h-full mt-5 "
-        width={500}
-        height={250}
-        images={sliderImages}
-        showBullets={true}
-        showNavs={true}
-        autoPlay={true}
-        onStartSlide={(index, length) => {
-          setImageNum(index)
-        }}
-        autoPlayDelay={2}
-      />
-      <div className="text-[#ae7fe4] text-xl font-bold mt-5">
-        The Current Image Slide Number Is {imageNum}
+    <div className="container mx-auto">
+      <div className="container mt-10 m-auto grid lg:grid-cols-2 gap-2">
+        <div>
+          <div className="flex flex-row justify-around">
+            <img
+              className="w-1/3 h-1/3"
+              src="https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="product"
+            />
+            <img
+              className="w-1/3 h-1/3"
+              src="https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="product"
+            />
+          </div>
+          <div className="mt-2 flex flex-row justify-around">
+            <img
+              className="w-1/3 h-1/3"
+              src="https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="product"
+            />
+            <img
+              className="w-1/3 h-1/3"
+              src="https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="product"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col" style={{ marginTop: '100px' }}>
+          <h3 className="text-[#864bc9] text-2xl font-bold mb-2">Products</h3>
+          <p className="text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+            sunt nam perferendis doloremque placeat ullam, ab cumque alias
+            iusto. Ea laboriosam nam facilis sed, eum ducimus quidem quae
+            repudiandae doloribus.
+          </p>
+        </div>
       </div>
     </div>
   )
