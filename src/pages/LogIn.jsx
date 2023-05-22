@@ -1,8 +1,30 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,navigate } from 'react-router-dom'
 import './LogIn.css'
+import {useState} from 'react';
+import Axios from 'axios';
 
 function LogIn() {
   const navigate = useNavigate()
+
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+
+  const logIn = async (e) => {
+    e.preventDefault();
+
+    await Axios.post('http://localhost:4000/login',{
+      email:email,
+      password:password
+    }).then(response=>{
+      if(response.data == 'success') {
+        navigate('/')
+      }
+    }).catch(e=>{
+        console.log(e);
+    }) 
+
+  }
+
   return (
     <div class="login-card">
       <div class="login-card2">
@@ -22,8 +44,9 @@ function LogIn() {
             <input
               type="text"
               class="input-field"
-              placeholder="Full Name"
+              placeholder="email"
               autocomplete="off"
+              onChange={e=>setEmail(e.target.value)}
             />
           </div>
           <div class="field">
@@ -37,10 +60,12 @@ function LogIn() {
             >
               <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
             </svg>
-            <input type="password" class="input-field" placeholder="Password" />
+            <input type="password" class="input-field" placeholder="Password" 
+            onChange={e=>setPassword(e.target.value)}
+            />
           </div>
           <div class="btn">
-            <button class="button1 mr-1">Login</button>
+            <button class="button1 mr-1" onClick={e=>logIn(e)}>Login</button>
             <button class="button1 ml-1" onClick={() => navigate('/signup')}>
               Sign Up Instead
             </button>
