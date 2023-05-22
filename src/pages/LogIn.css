@@ -116,7 +116,7 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
-  .card {
+  .login-card {
     max-width: 100vw;
   }
 }
