@@ -1,4 +1,4 @@
-import { useNavigate, navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './LogIn.css'
 import { useState } from 'react'
 import Axios from 'axios'
@@ -17,7 +17,7 @@ function LogIn() {
       password: password,
     })
       .then((response) => {
-        if (response.data == 'success') {
+        if (response.data === 'success') {
           navigate('/')
         }
       })

@@ -1,38 +1,35 @@
-import { useNavigate, Navigate } from "react-router";
-import "./SignUp.css";
-import { useState } from "react";
-import Axios from "axios";
+import { useNavigate } from 'react-router'
+import './SignUp.css'
+import { useState } from 'react'
+import Axios from 'axios'
 
 function SignUp() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [email, setEmail] = useState("");
-  const [fullname, setFullName] = useState("");
-  const [password, setPassword] = useState("");
-
+  const [email, setEmail] = useState('')
+  const [fullname, setFullName] = useState('')
+  const [password, setPassword] = useState('')
 
   const signUp = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-
-    await Axios.post("http://localhost:4000/signup", {
+    await Axios.post('http://localhost:4000/signup', {
       email: email,
       fullname: fullname,
       password: password,
-      googleId:Math.random().toString()
+      googleId: Math.random().toString(),
     })
       .then((response) => {
         // console.log(response)
-        if(response.status == "201") {
-          console.log("created...!")
-          navigate('/');
+        if (response.status === '201') {
+          console.log('created...!')
+          navigate('/')
         }
       })
       .catch((e) => {
-        console.log(e);
-      });
-
-  };
+        console.log(e)
+      })
+  }
 
   return (
     <div class="signup-card">
@@ -102,7 +99,7 @@ function SignUp() {
           <div className="mb-5">
             <button
               onClick={() => {
-                window.location.href = "//www.google.com";
+                window.location.href = '//www.google.com'
               }}
               type="button"
               className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
@@ -121,8 +118,8 @@ function SignUp() {
             </button>
 
             <div className="flex flex-col items-center mt-4">
-              <p className="text-cyan-500"> Already Have An Account?</p>{" "}
-              <button className="button1" onClick={() => navigate("/login")}>
+              <p className="text-cyan-500"> Already Have An Account?</p>{' '}
+              <button className="button1" onClick={() => navigate('/login')}>
                 Log In
               </button>
             </div>
@@ -130,7 +127,7 @@ function SignUp() {
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default SignUp;
+export default SignUp

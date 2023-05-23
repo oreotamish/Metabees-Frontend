@@ -8,7 +8,7 @@ import View from './pages/View'
 import PricePage from './pages/PricePage'
 import About from './pages/About'
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
-import PasswordReset from './pages/ForgotPassword/PasswordReset'
+import PasswordReset from './pages/PasswordReset/PasswordReset'
 
 function App() {
   return (
