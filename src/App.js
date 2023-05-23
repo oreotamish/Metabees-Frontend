@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import View from './pages/View'
 import PricePage from './pages/PricePage'
 import About from './pages/About'
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
+import PasswordReset from './pages/ForgotPassword/PasswordReset'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/pricing/:id" element={<PricePage />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/passwordreset/:id/:token" element={<PasswordReset />} />
         </Routes>
       </Router>
     </>
