@@ -1,16 +1,16 @@
 import { useNavigate } from 'react-router'
 import './SignUp.css'
-import { useState } from 'react'
 import Axios from 'axios'
 
 function SignUp() {
   const navigate = useNavigate()
 
-  const [email, setEmail] = useState('')
-  const [fullname, setFullName] = useState('')
-  const [password, setPassword] = useState('')
 
   const signUp = async (e) => {
+
+    const email = document.getElementById('email').value;
+    const fullname = document.getElementById('fullname').value;
+    const password = document.getElementById('password').value;
     e.preventDefault()
 
     await Axios.post('http://localhost:4000/signup', {
@@ -20,8 +20,7 @@ function SignUp() {
       googleId: Math.random().toString(),
     })
       .then((response) => {
-        // console.log(response)
-        if (response.status === '201') {
+        if (response.status === 201) {
           console.log('created...!')
           navigate('/')
         }
@@ -52,7 +51,7 @@ function SignUp() {
               class="input-field"
               placeholder="Full Name"
               autocomplete="off"
-              onChange={(e) => setFullName(e.target.value)}
+              id='fullname'
             />
           </div>
           <div class="field">
@@ -71,7 +70,7 @@ function SignUp() {
               class="input-field"
               placeholder="Email"
               autocomplete="off"
-              onChange={(e) => setEmail(e.target.value)}
+              id='email'
             />
           </div>
           <div class="field">
@@ -89,7 +88,7 @@ function SignUp() {
               type="password"
               class="input-field"
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
+              id='password'
             />
           </div>
 
