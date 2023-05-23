@@ -1,16 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import './LogIn.css'
-import { useState } from 'react'
 import Axios from 'axios'
 
 function LogIn() {
   const navigate = useNavigate()
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
   const logIn = async (e) => {
     e.preventDefault()
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
     await Axios.post('http://localhost:4000/login', {
       email: email,
@@ -47,7 +46,7 @@ function LogIn() {
               class="input-field"
               placeholder="email"
               autocomplete="off"
-              onChange={(e) => setEmail(e.target.value)}
+              id='email'
             />
           </div>
           <div class="field">
@@ -65,7 +64,7 @@ function LogIn() {
               type="password"
               class="input-field"
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
+              id='password'
             />
           </div>
           <div class="btn">
