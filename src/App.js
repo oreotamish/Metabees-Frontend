@@ -10,9 +10,11 @@ import About from './pages/About'
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
 import PasswordReset from './pages/PasswordReset/PasswordReset'
 
+import {UserContextProvider} from './UserContext';
+
 function App() {
   return (
-    <>
+    <UserContextProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -27,7 +29,7 @@ function App() {
           <Route path="/passwordreset/:id/:token" element={<PasswordReset />} />
         </Routes>
       </Router>
-    </>
+    </UserContextProvider>
   )
 }
 

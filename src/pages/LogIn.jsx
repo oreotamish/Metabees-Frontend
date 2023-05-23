@@ -1,9 +1,12 @@
-import { useNavigate } from 'react-router-dom'
-import './LogIn.css'
-import Axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+import './LogIn.css';
+import Axios from 'axios';
+import { useContext } from 'react';
+import {UserContext} from '../UserContext'
 
 function LogIn() {
   const navigate = useNavigate()
+  const {setUserInfo} = useContext(UserContext);
 
   const logIn = async (e) => {
     e.preventDefault()
@@ -17,6 +20,8 @@ function LogIn() {
     })
       .then((response) => {
         if (response.data === 'success') {
+          setUserInfo(response.data)
+          console.log(response)
           navigate('/')
         }
       })
