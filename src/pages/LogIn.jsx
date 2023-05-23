@@ -19,9 +19,8 @@ function LogIn() {
       password: password,
     })
       .then((response) => {
-        if (response.data === 'success') {
+        if (response.data) {
           setUserInfo(response.data)
-          console.log(response)
           navigate('/')
         }
       })
