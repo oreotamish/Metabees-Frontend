@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router'
 import { Menu, X } from 'lucide-react'
 import './Navbar.css'
 
+import getCookieByName,{getCookieInfo} from '../getCookie';
+
 const menuItems = [
   {
     name: 'View',
@@ -89,13 +91,23 @@ function Navbar() {
           </ul>
         </div>
         <div className="hidden lg:block">
-          <button
+          {getCookieInfo() && (<button
+            type="button"
+            className="login-btn"
+            onClick={() => {
+              document.cookie = `aToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+              navigate('/')
+            }}
+          >
+            Log out
+          </button>)}
+          {!getCookieInfo() && (<button
             type="button"
             className="login-btn"
             onClick={() => navigate('/signup')}
           >
-            Sign Up
-          </button>
+            Sign up
+          </button>)}
         </div>
         <div className="lg:hidden">
           <Menu

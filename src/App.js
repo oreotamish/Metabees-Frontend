@@ -13,15 +13,7 @@ import PasswordReset from './pages/PasswordReset/PasswordReset'
 import { UserContextProvider } from './UserContext'
 
 function App() {
-  function getCookieByName(name) {
-    const pattern = RegExp(name + '=.[^;]*')
-    const matched = document.cookie.match(pattern)
-    if (matched) {
-      const cookie = matched[0].split('=')
-      return cookie[1]
-    }
-    return null
-  }
+  
   return (
     <UserContextProvider>
       <Router>
