@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom'
-import './LogIn.css'
 import Axios from 'axios'
+import google from '../assets/google.png'
 import { useContext } from 'react'
 import { UserContext } from '../UserContext'
+import './LogIn.css'
 
 function LogIn() {
   const navigate = useNavigate()
@@ -53,7 +54,7 @@ function LogIn() {
             <input
               type="text"
               class="input-field"
-              placeholder="email"
+              placeholder="Email"
               autocomplete="off"
               id="email"
             />
@@ -80,33 +81,22 @@ function LogIn() {
             <button class="button1 mr-1" onClick={(e) => logIn(e)}>
               Login
             </button>
-            <button class="button1 ml-1" onClick={() => navigate('/signup')}>
+            <button class="button1" onClick={() => navigate('/signup')}>
               Sign Up Instead
             </button>
           </div>
           <button class="button3" onClick={() => navigate('/forgotpassword')}>
             Forgot Password
           </button>
-          <div className="mb-3">
-            <button
+          <div className="m-auto mb-3">
+            <img
+              className="w-10 h-10 cursor-pointer"
+              src={google}
+              alt="google"
               onClick={() => {
                 window.location.href = '//www.google.com'
               }}
-              type="button"
-              className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
-            >
-              <span className="mr-2 inline-block">
-                <svg
-                  className="h-6 w-6 text-rose-500"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M20.283 10.356h-8.327v3.451h4.792c-.446 2.193-2.313 3.453-4.792 3.453a5.27 5.27 0 0 1-5.279-5.28 5.27 5.27 0 0 1 5.279-5.279c1.259 0 2.397.447 3.29 1.178l2.6-2.599c-1.584-1.381-3.615-2.233-5.89-2.233a8.908 8.908 0 0 0-8.934 8.934 8.907 8.907 0 0 0 8.934 8.934c4.467 0 8.529-3.249 8.529-8.934 0-.528-.081-1.097-.202-1.625z"></path>
-                </svg>
-              </span>
-              Log in with Google
-            </button>
+            />
           </div>
         </form>
       </div>

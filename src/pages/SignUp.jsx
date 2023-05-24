@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router'
-import './SignUp.css'
+import google from '../assets/google.png'
 import Axios from 'axios'
+import './SignUp.css'
 
 function SignUp() {
   const navigate = useNavigate()
@@ -89,36 +90,41 @@ function SignUp() {
               id="password"
             />
           </div>
-
+          <div class="field">
+            <svg
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              height="16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+              class="input-icon"
+            >
+              <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+            </svg>
+            <input
+              type="password"
+              class="input-field"
+              placeholder="Confirm Password"
+              id="confirm-password"
+            />
+          </div>
           <button class="button2 mt-6" onClick={(e) => signUp(e)}>
             Sign Up
           </button>
-          <div className="mb-5">
-            <button
+          <div className="mb-5 flex flex-col items-center">
+            <img
+              className="w-10 h-10 cursor-pointer"
+              src={google}
+              alt="google"
               onClick={() => {
                 window.location.href = '//www.google.com'
               }}
-              type="button"
-              className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
-            >
-              <span className="mr-2 inline-block">
-                <svg
-                  className="h-6 w-6 text-rose-500"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M20.283 10.356h-8.327v3.451h4.792c-.446 2.193-2.313 3.453-4.792 3.453a5.27 5.27 0 0 1-5.279-5.28 5.27 5.27 0 0 1 5.279-5.279c1.259 0 2.397.447 3.29 1.178l2.6-2.599c-1.584-1.381-3.615-2.233-5.89-2.233a8.908 8.908 0 0 0-8.934 8.934 8.907 8.907 0 0 0 8.934 8.934c4.467 0 8.529-3.249 8.529-8.934 0-.528-.081-1.097-.202-1.625z"></path>
-                </svg>
-              </span>
-              Sign up with Google
-            </button>
-
+            />
             <div className="flex flex-col items-center mt-4">
-              <p className="text-cyan-500"> Already Have An Account?</p>{' '}
-              <button className="button1" onClick={() => navigate('/login')}>
+              <p className="text-cyan-500 mb-1"> Already Have An Account?</p>{' '}
+              <a className="text-white hover:text-purple-400" href="/login">
                 Log In
-              </button>
+              </a>
             </div>
           </div>
         </form>

@@ -20,9 +20,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5em;
+  gap: 0.8em;
   border-radius: 25px;
-  padding: 0.6em;
+  padding: 0.8em;
   border: none;
   outline: none;
   color: white;
@@ -75,7 +75,7 @@
   text-align: center;
   max-width: 27vw;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .signup-card2 {

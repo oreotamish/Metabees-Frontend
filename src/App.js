@@ -27,24 +27,15 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          {getCookieByName('aToken') ? (
-            <></>
-          ) : (
-            <>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/view" element={<View />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/pricing/:id" element={<PricePage />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/login" element={<LogIn />} />
-              <Route path="/forgotpassword" element={<ForgotPassword />} />
-              <Route
-                path="/passwordreset/:id/:token"
-                element={<PasswordReset />}
-              />
-            </>
-          )}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/view" element={<View />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/pricing/:id" element={<PricePage />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/passwordreset/:id/:token" element={<PasswordReset />} />
         </Routes>
       </Router>
     </UserContextProvider>

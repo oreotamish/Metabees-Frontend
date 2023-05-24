@@ -53,7 +53,7 @@ function Navbar() {
           </a>
         </div>
         <div className="hidden lg:block">
-          <ul className="inline-flex space-x-8">
+          <ul className="inline-flex space-x-8 nav-items">
             {menuItems.map((item) => (
               <li key={item.name}>
                 {window.location.pathname === '/' && item.name === 'Pricing' ? (
