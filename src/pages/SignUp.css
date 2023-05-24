@@ -59,17 +59,17 @@
   border: none;
   outline: none;
   transition: 0.4s ease-in-out;
-  background-image: linear-gradient(163deg, #6e25c0 0%, #3700ff 100%);
+  background-image: linear-gradient(163deg, #2a1ad8 0%, #7231ec 100%);
   color: white;
 }
 
 .button2:hover {
-  background-image: linear-gradient(163deg, #6e25c0 0%, #13034b 100%);
+  background-image: linear-gradient(163deg, #6518bd 0%, #2225df 100%);
   color: white;
 }
 
 .signup-card {
-  background-image: linear-gradient(163deg, #6e25c0 0%, #8400ff 100%);
+  background-image: linear-gradient(163deg, #6e25c0 0%, #0044ff 100%);
   border-radius: 22px;
   transition: all 0.3s;
   text-align: center;
