@@ -5,15 +5,13 @@ import Axios from 'axios'
 function SignUp() {
   const navigate = useNavigate()
 
-
   const signUp = async (e) => {
-
-    const email = document.getElementById('email').value;
-    const fullname = document.getElementById('fullname').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value
+    const fullname = document.getElementById('fullname').value
+    const password = document.getElementById('password').value
     e.preventDefault()
 
-    await Axios.post('http://localhost:4000/signup', {
+    await Axios.post('http://localhost:3000/auth/signup', {
       email: email,
       fullname: fullname,
       password: password,
@@ -51,7 +49,7 @@ function SignUp() {
               class="input-field"
               placeholder="Full Name"
               autocomplete="off"
-              id='fullname'
+              id="fullname"
             />
           </div>
           <div class="field">
@@ -70,7 +68,7 @@ function SignUp() {
               class="input-field"
               placeholder="Email"
               autocomplete="off"
-              id='email'
+              id="email"
             />
           </div>
           <div class="field">
@@ -88,7 +86,7 @@ function SignUp() {
               type="password"
               class="input-field"
               placeholder="Password"
-              id='password'
+              id="password"
             />
           </div>
 

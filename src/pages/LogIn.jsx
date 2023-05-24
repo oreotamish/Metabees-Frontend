@@ -1,27 +1,32 @@
-import { useNavigate } from 'react-router-dom';
-import './LogIn.css';
-import Axios from 'axios';
-import { useContext } from 'react';
-import {UserContext} from '../UserContext'
+import { useNavigate } from 'react-router-dom'
+import './LogIn.css'
+import Axios from 'axios'
+import { useContext } from 'react'
+import { UserContext } from '../UserContext'
 
 function LogIn() {
   const navigate = useNavigate()
-  const {setUserInfo} = useContext(UserContext);
+  const { setUserInfo } = useContext(UserContext)
 
   const logIn = async (e) => {
     e.preventDefault()
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
 
-    await Axios.post('http://localhost:4000/login', {
-      email: email,
-      password: password,
-    })
+    await Axios.post(
+      'http://localhost:3000/auth/login',
+      {
+        email: email,
+        password: password,
+      },
+      { withCredentials: true }
+    )
       .then((response) => {
         if (response.data) {
           setUserInfo(response.data)
-          navigate('/')
+          // navigate('/')
+          window.location.href = '/'
         }
       })
       .catch((e) => {
@@ -50,7 +55,7 @@ function LogIn() {
               class="input-field"
               placeholder="email"
               autocomplete="off"
-              id='email'
+              id="email"
             />
           </div>
           <div class="field">
@@ -68,7 +73,7 @@ function LogIn() {
               type="password"
               class="input-field"
               placeholder="Password"
-              id='password'
+              id="password"
             />
           </div>
           <div class="btn">
