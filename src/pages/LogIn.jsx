@@ -3,7 +3,7 @@ import Axios from 'axios'
 import google from '../assets/google.png'
 import { useContext } from 'react'
 import { UserContext } from '../UserContext'
-import './LogIn.css';
+import './LogIn.css'
 import { getCookieInfo } from '../getCookie'
 
 function LogIn() {
@@ -26,7 +26,7 @@ function LogIn() {
     )
       .then((response) => {
         if (response.data) {
-          setUserInfo(getCookieInfo());
+          setUserInfo(getCookieInfo())
           // navigate('/')
           window.location.href = '/'
         }
@@ -95,7 +95,7 @@ function LogIn() {
               src={google}
               alt="google"
               onClick={() => {
-                window.location.href = '//www.google.com'
+                window.location.href = '//localhost:3000/auth/google'
               }}
             />
           </div>

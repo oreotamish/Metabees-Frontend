@@ -4,24 +4,12 @@ import axios from 'axios'
 import styles from './styles.module.css'
 
 const PasswordReset = () => {
-  const [validUrl, setValidUrl] = useState(false)
+  const [validUrl, setValidUrl] = useState(true)
   const [password, setPassword] = useState('')
   const [msg, setMsg] = useState('')
   const [error, setError] = useState('')
   const param = useParams()
   const url = `http://localhost:3000/auth/reset-password/${param.id}/${param.token}`
-
-  useEffect(() => {
-    const verifyUrl = async () => {
-      try {
-        await axios.get(url)
-        setValidUrl(true)
-      } catch (error) {
-        setValidUrl(false)
-      }
-    }
-    verifyUrl()
-  }, [param, url])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
