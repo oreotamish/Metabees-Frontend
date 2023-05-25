@@ -8,8 +8,18 @@ import mobile from '../assets/mobile.png'
 import tablet from '../assets/tablet.png'
 import vr from '../assets/vr.png'
 import './Home.css'
+import { useEffect } from 'react'
+import Axios  from 'axios'
 
 function Home() {
+  useEffect(()=> {
+    console.log('using effect');
+    Axios.get('http://localhost:3000/auth/login/success').then(response=>{
+      console.log(response.data);
+    }).catch(e=> {
+      console.log(e);
+    })
+  },[])
   return (
     <div>
       {/* Home Video */}
