@@ -8,7 +8,7 @@ const View = () => {
         <source src={bgVideo} type="video/mp4" />
       </video>
       <div className="bg-transparent view-video-content">
-        <h1 className="mb-5 sm:font-bold sm:text-3xl">
+        <h1 className="mb-5 sm:font-bold sm:text-3xl home-heading">
           <span className="text-[#6e25c0]">
             En<span className="text-[#853fd6]">t</span>
             <span className="text-[#8c4ad8]">er</span>
