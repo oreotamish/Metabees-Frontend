@@ -4,8 +4,18 @@ import Pricing from './Pricing'
 import Footer from '../components/Footer'
 import Products from '../components/Products'
 import './Home.css'
+import { useEffect } from 'react'
+import Axios  from 'axios'
 
 function Home() {
+  useEffect(()=> {
+    console.log('using effect');
+    Axios.get('http://localhost:3000/auth/login/success').then(response=>{
+      console.log(response.data);
+    }).catch(e=> {
+      console.log(e);
+    })
+  },[])
   return (
     <div>
       {/* Home Video */}
