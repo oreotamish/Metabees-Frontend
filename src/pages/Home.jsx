@@ -14,7 +14,7 @@ function Home() {
           <source src={bgVideo} type="video/mp4" />
         </video>
         <div className="bg-transparent text-white video-content">
-          <h1 className="sm:font-bold sm:text-3xl">
+          <h1 className="sm:font-bold sm:text-3xl home-heading">
             <span className="text-[#6e25c0]">
               T<span className="text-[#853fd6]">h</span>
               <span className="text-[#8c4ad8]">e</span>
@@ -40,12 +40,12 @@ function Home() {
 
       {/* Device Support */}
       <div className="mt-10 relative w-full h-full flex flex-col overflow-x-hidden">
-        <h1 className="m-auto font-bold text-[#864bc9] text-2xl">
+        <h1 className="m-auto font-bold text-[#864bc9] text-2xl home-heading">
           Multi Device Support
         </h1>
         <div className="flex flex-col lg:flex-row p-6">
           <div class="main-card">
-            <div class="sub-card text-white font-bold">Desktop / Laptop</div>
+            <div class="sub-card text-white font-bold">Desktop/ Laptop</div>
           </div>
           <div class="main-card">
             <div class="sub-card text-white font-bold">Smart Phone</div>
@@ -65,7 +65,7 @@ function Home() {
           <source src={multipleWorlds} type="video/mp4" />
         </video>
         <div className="bg-transparent text-white video-content">
-          <h1 className="sm:font-bold sm:text-3xl">
+          <h1 className="sm:font-bold sm:text-3xl home-heading">
             <span className="text-[#915cce]">
               MUL<span className="text-[#853fd6]">TI</span>
               <span className="text-[#8c4ad8]">PLE</span>
@@ -81,7 +81,7 @@ function Home() {
       {/* Powered By */}
 
       <div className="mt-10 relative w-full h-full flex flex-col items-center justify-center overflow-x-hidden">
-        <h1 className="m-auto mb-2 text-[#864bc9] font-bold text-2xl">
+        <h1 className="m-auto mb-2 text-[#864bc9] font-bold text-2xl home-heading">
           Powered By
         </h1>
         <div className="flex flex-col lg:flex-row items-center justify-center p-6">

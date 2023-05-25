@@ -1,13 +1,14 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { subscriptions } from '../data'
+import './Pricing.css'
 
 function Pricing() {
   const navigate = useNavigate()
   return (
     <section className="relative overflow-hidden py-10 mt-6">
       <p
-        className="text-[#864bc9] text-center font-bold text-2xl"
+        className="text-[#864bc9] text-center font-bold text-2xl home-heading"
         style={{ marginBottom: '4rem' }}
       >
         Pricing
@@ -40,7 +41,7 @@ function Pricing() {
                   </ul>
                   <button
                     type="button"
-                    className="login-btn"
+                    className="pricing-btn"
                     onClick={() => navigate('/pricing/1')}
                   >
                     Choose Plan
@@ -76,7 +77,7 @@ function Pricing() {
                   </ul>
                   <button
                     type="button"
-                    className="login-btn"
+                    className="pricing-btn"
                     onClick={() => navigate('/pricing/2')}
                   >
                     Choose Plan
@@ -109,7 +110,7 @@ function Pricing() {
                   </ul>
                   <button
                     type="button"
-                    className="login-btn"
+                    className="pricing-btn"
                     onClick={() => navigate('/pricing/3')}
                   >
                     Choose Plan

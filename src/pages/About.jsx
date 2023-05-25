@@ -60,17 +60,18 @@ function About() {
         {/* Hero Map */}
         <div className="flex flex-col space-y-8 pb-10 pt-12 md:pt-24">
           <div className="max-w-max rounded-full  bg-[#6e25c0] p-1 px-3">
-            <p className="text-xs font-semibold text-white leading-normal md:text-sm">
-              About the company
+            <p className="text-xs font-semibold text-white leading-normal md:text-sm home-heading">
+              Neptaverse
             </p>
           </div>
-          <p className="text-3xl font-bold text-[#8547cc] md:text-5xl md:leading-10">
-            The Future is AI and we will help you build on it.
+          <p className="text-2xl font-bold text-[#8547cc] md:text-3xl md:leading-10 home-h1">
+            Platform which allows you to showcase your products in VR.
           </p>
           <p className="max-w-4xl text-base text-[#e7caf3] md:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            veritatis voluptates neque itaque repudiandae sint, explicabo
-            assumenda quam ratione placeat?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            placeat consequatur beatae esse harum est quasi veniam natus
+            accusantium amet non sapiente sed, eius numquam alias assumenda
+            laboriosam aliquid omnis!
           </p>
         </div>
         <div className="w-full space-y-4"></div>
@@ -78,7 +79,7 @@ function About() {
         {/* greetings */}
         <div className="mt-16 flex items-center">
           <div className="space-y-6 md:w-3/4">
-            <p className="text-3xl font-bold text-[#8547cc] md:text-4xl">
+            <p className="text-3xl font-bold text-[#8547cc] md:text-4xl home-h1">
               Meet our team
             </p>
             <p className="max-w-4xl text-base text-[#e7caf3] md:text-xl">

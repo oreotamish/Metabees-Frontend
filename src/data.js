@@ -1,28 +1,22 @@
 export const subscriptions = [
   [
-    'PREMIUM',
-    '$150',
-    ['Discount', 'Basic Support', 'Ads Banner Free', 'Design Style'],
+    'Basic',
+    '$40',
+    ['1000 Views', '5 Worlds', 'Dedicated Dashboard', '24/7 Support'],
   ],
   [
-    'GOLD',
+    'Standard',
+    '$60',
+    ['3000 Views', '20 Worlds', 'Dedicated Dashboard', '24/7 Support'],
+  ],
+  [
+    'Pro',
     '$100',
     [
-      'Discount',
-      'Basic Support',
-      'Ads Banner Free',
-      'Design Style',
-      'Component Library',
-    ],
-  ],
-  [
-    'SPECIAL',
-    '$75',
-    [
-      'Every feature of Premium Plan',
-      'Component Library',
-      'All Limited Links',
-      'Own Analytics Platform',
+      '10k Views',
+      '20 Included Worlds',
+      'External Website Integration',
+      'Premium Subscription',
     ],
   ],
 ]
