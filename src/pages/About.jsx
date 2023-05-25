@@ -79,7 +79,7 @@ function About() {
         {/* greetings */}
         <div className="mt-16 flex items-center">
           <div className="space-y-6 md:w-3/4">
-            <p className="text-3xl font-bold text-[#8547cc] md:text-4xl home-h1">
+            <p className="text-2xl font-bold text-[#8547cc] md:text-3xl md:leading-10 home-h1">
               Meet our team
             </p>
             <p className="max-w-4xl text-base text-[#e7caf3] md:text-xl">
