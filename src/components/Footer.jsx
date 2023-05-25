@@ -39,14 +39,6 @@ function Footer() {
                   Support
                 </a>
               </li>
-              <li className="p-5">
-                <a
-                  className="font-medium text-white hover:font-bold hover:text-[#19A7CE]"
-                  href="#"
-                >
-                  Career
-                </a>
-              </li>
             </ul>
           </div>
           <div className="w-auto p-8">

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 import { Menu, X } from 'lucide-react'
 import './Navbar.css'
 
-import getCookieByName,{getCookieInfo} from '../getCookie';
+import { getCookieInfo } from '../getCookie'
 
 const menuItems = [
   {
@@ -49,13 +49,13 @@ function Navbar() {
       }
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-        <div className="inline-flex items-center space-x-2">
+        <div className="inline-flex space-x-2">
           <a href="/" className="text-white hover:text-[#6e25c0] font-bold">
             Metabees
           </a>
         </div>
-        <div className="hidden lg:block">
-          <ul className="inline-flex space-x-8 nav-items">
+        <div className="hidden ml-28 lg:block">
+          <ul className="inline-flex nav-items space-x-6">
             {menuItems.map((item) => (
               <li key={item.name}>
                 {window.location.pathname === '/' && item.name === 'Pricing' ? (
@@ -91,24 +91,38 @@ function Navbar() {
           </ul>
         </div>
         <div className="hidden lg:block">
-          {getCookieInfo() && (<button
-            type="button"
-            className="login-btn"
-            onClick={() => {
-              document.cookie = `aToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-              navigate('/')
-            }}
-          >
-            Log out
-          </button>)}
-          {!getCookieInfo() && (<button
-            type="button"
-            className="login-btn"
-            onClick={() => navigate('/signup')}
-          >
-            Sign up
-          </button>)}
+          {getCookieInfo() && (
+            <button
+              type="button"
+              className="login-btn"
+              onClick={() => {
+                document.cookie = `aToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+                navigate('/')
+              }}
+            >
+              Log out
+            </button>
+          )}
+          {!getCookieInfo() && (
+            <div className="flex">
+              <button
+                type="button"
+                className="login-btn"
+                onClick={() => navigate('/signup')}
+              >
+                Sign up
+              </button>
+              <button
+                type="button"
+                className="login-btn ml-2"
+                onClick={() => navigate('/login')}
+              >
+                Log In
+              </button>
+            </div>
+          )}
         </div>
+
         <div className="lg:hidden">
           <Menu
             onClick={toggleMenu}
