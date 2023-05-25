@@ -3,6 +3,10 @@ import multipleWorlds from '../assets/multipleWorlds.mp4'
 import Pricing from './Pricing'
 import Footer from '../components/Footer'
 import Products from '../components/Products'
+import computer from '../assets/computer.png'
+import mobile from '../assets/mobile.png'
+import tablet from '../assets/tablet.png'
+import vr from '../assets/vr.png'
 import './Home.css'
 
 function Home() {
@@ -45,16 +49,36 @@ function Home() {
         </h1>
         <div className="flex flex-col lg:flex-row p-6">
           <div class="main-card">
-            <div class="sub-card text-white font-bold">Desktop/ Laptop</div>
+            <div class="sub-card text-white font-bold">
+              <div className="flex flex-col items-center">
+                <img className="h-1/2 w-1/2" src={computer} alt="PC" />
+                <p className="mt-1">Desktop / Laptop</p>
+              </div>
+            </div>
           </div>
           <div class="main-card">
-            <div class="sub-card text-white font-bold">Smart Phone</div>
+            <div class="sub-card text-white font-bold">
+              <div className="flex flex-col items-center">
+                <img className="h-1/2 w-1/2" src={mobile} alt="Mobile" />
+                <p className="mt-1">Smartphone</p>
+              </div>
+            </div>
           </div>
           <div class="main-card">
-            <div class="sub-card text-white font-bold">Tablet</div>
+            <div class="sub-card text-white font-bold">
+              <div className="flex flex-col items-center">
+                <img className="h-1/2 w-1/2" src={tablet} alt="PC" />
+                <p className="mt-1">Tablet / iPad</p>
+              </div>
+            </div>
           </div>
           <div class="main-card">
-            <div class="sub-card text-white font-bold">VR Headset</div>
+            <div class="sub-card text-white font-bold">
+              <div className="flex flex-col items-center">
+                <img className="h-1/2 w-1/2" src={vr} alt="PC" />
+                <p className="mt-1">VR Headset</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
