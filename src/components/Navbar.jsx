@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 import { Menu, X } from 'lucide-react'
 import './Navbar.css'
 
-import { getCookieInfo } from '../getCookie'
+import getCookieByName,{ getCookieInfo } from '../getCookie'
 
 const menuItems = [
   {
@@ -23,6 +23,7 @@ const menuItems = [
 ]
 
 function Navbar() {
+  // console.log(getCookieInfo())
   const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -91,6 +92,7 @@ function Navbar() {
           </ul>
         </div>
         <div className="hidden lg:block">
+          {getCookieByName()}
           {getCookieInfo() && (
             <button
               type="button"

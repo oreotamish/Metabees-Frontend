@@ -2,15 +2,28 @@ import { useNavigate } from 'react-router'
 import google from '../assets/google.png'
 import Axios from 'axios'
 import './SignUp.css'
+import { useState } from 'react'
+import { useContext } from 'react'
+import { UserContext } from '../UserContext'
+import { getCookieInfo } from '../getCookie'
 
 function SignUp() {
   const navigate = useNavigate()
+  const [error,setError] = useState("");
+  const { setUserInfo } = useContext(UserContext)
 
   const signUp = async (e) => {
     const email = document.getElementById('email').value
     const fullname = document.getElementById('fullname').value
     const password = document.getElementById('password').value
+    const comfirmPassowrd = document.getElementById('confirm-password').value;
     e.preventDefault()
+
+    if(comfirmPassowrd !== password) {
+      setError('Confirm password do not match password!');
+      setTimeout(()=>setError(""),3000);
+      return;
+    }
 
     await Axios.post('http://localhost:3000/auth/signup', {
       email: email,
@@ -20,6 +33,8 @@ function SignUp() {
     })
       .then((response) => {
         if (response.status === 201) {
+          // console.log(response)
+          setUserInfo(getCookieInfo());
           console.log('created...!')
           navigate('/')
         }
@@ -29,11 +44,25 @@ function SignUp() {
       })
   }
 
+  const SignUpWithGoogle = async() => {
+    // await Axios.get('http://localhost:3000/auth/google').then(response=>{
+    //   console.log(response);
+    // }).catch(e=>{
+    //   console.log(e);
+    // })
+
+    // await fetch()
+
+    // storing in database
+   let mywindow= window.open('http://localhost:3000/auth/google',"")
+  }
+
   return (
     <div class="signup-card">
       <div class="signup-card2">
         <form class="form">
           <p id="heading">Sign Up</p>
+          <p className='text-red-500'>{error}</p>
           <div class="field">
             <svg
               viewBox="0 0 16 16"
@@ -116,9 +145,11 @@ function SignUp() {
               className="w-10 h-10 cursor-pointer"
               src={google}
               alt="google"
-              onClick={() => {
-                window.location.href = '//www.google.com'
-              }}
+              onClick={
+                // window.location.href = '/auth/google'
+                SignUpWithGoogle
+                // json message /auth/google/user
+              }
             />
             <div className="flex flex-col items-center mt-4">
               <p className="text-cyan-500 mb-1"> Already Have An Account?</p>{' '}
