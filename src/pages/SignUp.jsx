@@ -25,15 +25,18 @@ function SignUp() {
       return
     }
 
-    await Axios.post('http://localhost:3000/auth/signup', {
-      email: email,
-      fullname: fullname,
-      password: password,
-      googleId: Math.random().toString(),
-    })
+    await Axios.post(
+      'http://localhost:3000/auth/signup',
+      {
+        email: email,
+        fullname: fullname,
+        password: password,
+        googleId: Math.random().toString(),
+      },
+      { withCredentials: true }
+    )
       .then((response) => {
         if (response.status === 200) {
-          // console.log(response)
           setUserInfo(getCookieInfo())
           window.location.href = '/'
         }
