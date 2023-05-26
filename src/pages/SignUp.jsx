@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router'
 import google from '../assets/google.png'
 import Axios from 'axios'
 import './SignUp.css'
@@ -8,7 +7,6 @@ import { UserContext } from '../UserContext'
 import { getCookieInfo } from '../getCookie'
 
 function SignUp() {
-  const navigate = useNavigate()
   const [error, setError] = useState('')
   const { setUserInfo } = useContext(UserContext)
 
@@ -25,15 +23,18 @@ function SignUp() {
       return
     }
 
-    await Axios.post('http://localhost:3000/auth/signup', {
-      email: email,
-      fullname: fullname,
-      password: password,
-      googleId: Math.random().toString(),
-    })
+    await Axios.post(
+      'http://localhost:3000/auth/signup',
+      {
+        email: email,
+        fullname: fullname,
+        password: password,
+        googleId: Math.random().toString(),
+      },
+      { withCredentials: true }
+    )
       .then((response) => {
         if (response.status === 200) {
-          // console.log(response)
           setUserInfo(getCookieInfo())
           window.location.href = '/'
         }
@@ -41,19 +42,6 @@ function SignUp() {
       .catch((e) => {
         console.log(e)
       })
-  }
-
-  const SignUpWithGoogle = async () => {
-    // await Axios.get('http://localhost:3000/auth/google').then(response=>{
-    //   console.log(response);
-    // }).catch(e=>{
-    //   console.log(e);
-    // })
-
-    // await fetch()
-
-    // storing in database
-    let mywindow = window.open('http://localhost:3000/auth/google', '')
   }
 
   return (
@@ -144,10 +132,8 @@ function SignUp() {
               className="w-10 h-10 cursor-pointer"
               src={google}
               alt="google"
-              onClick={
-                // window.location.href = '/auth/google'
-                SignUpWithGoogle
-                // json message /auth/google/user
+              onClick={() =>
+                window.open('http://localhost:3000/auth/google', '')
               }
             />
             <div className="flex flex-col items-center mt-4">

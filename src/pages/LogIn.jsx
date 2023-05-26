@@ -27,7 +27,7 @@ function LogIn() {
       .then((response) => {
         if (response.data) {
           setUserInfo(getCookieInfo())
-          // navigate('/')
+
           window.location.href = '/'
         }
       })
