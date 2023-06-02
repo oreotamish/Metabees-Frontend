@@ -11,6 +11,8 @@ import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
 import PasswordReset from './pages/PasswordReset/PasswordReset'
 
 import { UserContextProvider } from './UserContext'
+import DashBoard from './pages/DashBoard'
+
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path='/dashboard'element={<DashBoard />} />
+          
           <Route
             path="/auth/reset-password/:id/:token"
             element={<PasswordReset />}
