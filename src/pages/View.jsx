@@ -1,7 +1,13 @@
 import bgVideo from '../assets/homeBg.mp4'
 import './View.css'
+import { useNavigate } from 'react-router'
 
 const View = () => {
+  const navigate = useNavigate()
+  const onSubmit = () => {
+    navigate('/waitlist')
+  }
+
   return (
     <div className="view-video-container">
       <video autoPlay loop muted className="view-video-background">
@@ -29,7 +35,9 @@ const View = () => {
             required=""
           />
         </div>
-        <button className="view-enter-btn">VISIT</button>
+        <button className="view-enter-btn" onClick={onSubmit}>
+          VISIT
+        </button>
       </div>
     </div>
   )

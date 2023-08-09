@@ -9,10 +9,11 @@ import PricePage from './pages/PricePage'
 import About from './pages/About'
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
 import PasswordReset from './pages/PasswordReset/PasswordReset'
+import Waitlist from './pages/Waitlist'
+import Contact from './pages/Contact'
 
 import { UserContextProvider } from './UserContext'
 import DashBoard from './pages/DashBoard'
-
 
 function App() {
   return (
@@ -27,9 +28,11 @@ function App() {
           <Route path="/pricing/:id" element={<PricePage />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/waitlist" element={<Waitlist />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
-          <Route path='/dashboard'element={<DashBoard />} />
-          
+          <Route path="/dashboard" element={<DashBoard />} />
+
           <Route
             path="/auth/reset-password/:id/:token"
             element={<PasswordReset />}

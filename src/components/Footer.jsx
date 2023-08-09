@@ -26,17 +26,9 @@ function Footer() {
               <li className="p-5">
                 <a
                   className="font-medium text-white hover:font-bold hover:text-[#19A7CE]"
-                  href="#"
+                  href="/contact"
                 >
                   Contact Us
-                </a>
-              </li>
-              <li className="p-5">
-                <a
-                  className="font-medium text-white hover:font-bold hover:text-[#19A7CE]"
-                  href="#"
-                >
-                  Support
                 </a>
               </li>
             </ul>

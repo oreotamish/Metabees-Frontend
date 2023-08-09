@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 import { Menu, X } from 'lucide-react'
 import './Navbar.css'
 
-import getCookieByName,{ getCookieInfo } from '../getCookie'
+import getCookieByName, { getCookieInfo } from '../getCookie'
 
 const menuItems = [
   {
@@ -107,7 +107,7 @@ function Navbar() {
           )}
           {!getCookieInfo() && (
             <div className="flex">
-              <button
+              {/* <button
                 type="button"
                 className="login-btn"
                 onClick={() => navigate('/signup')}
@@ -120,6 +120,13 @@ function Navbar() {
                 onClick={() => navigate('/login')}
               >
                 Log In
+              </button> */}
+              <button
+                type="button"
+                className="login-btn"
+                onClick={() => navigate('/waitlist')}
+              >
+                Join Waitlist
               </button>
             </div>
           )}
@@ -151,7 +158,7 @@ function Navbar() {
                         />
                       </svg>
                     </span>
-                    <span className="font-bold">DevUI</span>
+                    <span className="font-bold">Metabees</span>
                   </div>
                   <div className="-mr-2">
                     <button
