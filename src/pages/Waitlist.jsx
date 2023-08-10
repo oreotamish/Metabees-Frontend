@@ -3,12 +3,34 @@ import './waitlist.css'
 
 export default function Waitlist() {
   const [isModalOpen, setModalOpen] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
-  const onSubmit = () => {
-    setModalOpen(true)
-    setTimeout(() => {
-      setModalOpen(false)
-    }, 10000)
+  const onSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+      let res = await fetch('http://localhost:3000/waitlist', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: name,
+          email: email,
+        }),
+      })
+      let resJson = await res.json()
+      if (res.status === 200) {
+        setName('')
+        setEmail('')
+        setModalOpen(true)
+        setTimeout(() => {
+          setModalOpen(false)
+        }, 10000)
+      } else {
+        alert(resJson.message)
+      }
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   // Check whether the input fields are empty or not
@@ -39,9 +61,10 @@ export default function Waitlist() {
           <div className="waitlist-input-container">
             <input
               className="waitlist-input-mail"
-              name="name"
-              type="email"
+              value={name}
+              type="text"
               placeholder="Enter name"
+              onChange={(e) => setName(e.target.value)}
             />
             <span> </span>
           </div>
@@ -56,9 +79,10 @@ export default function Waitlist() {
           <div className="waitlist-input-container">
             <input
               className="waitlist-input-pwd"
-              name="email"
+              value={email}
               type="e-mail"
               placeholder="Enter e-mail"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <button type="button" className="waitlist-submit" onClick={validate}>
