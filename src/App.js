@@ -26,8 +26,8 @@ function App() {
           <Route path="/view" element={<View />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/pricing/:id" element={<PricePage />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LogIn />} />
+          <Route path="/auth/signup" element={<SignUp />} />
+          <Route path="/auth/login" element={<LogIn />} />
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />

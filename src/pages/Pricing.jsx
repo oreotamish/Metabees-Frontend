@@ -32,7 +32,7 @@ function Pricing() {
                 <div className="mt-7 border-t border-[#6e25c0] pt-5 text-center">
                   <ul>
                     {subscriptions[0][2].map((feature) => (
-                      <li className="mb-6 flex items-center">
+                      <li className="mb-6 flex items-center" key={feature}>
                         <span className="ml-2 text-sm text-white">
                           {feature}
                         </span>
@@ -68,7 +68,7 @@ function Pricing() {
                 <div className="mt-7 border-t pt-5 text-center">
                   <ul className="mb-10">
                     {subscriptions[1][2].map((feature) => (
-                      <li className="mb-6 flex items-center">
+                      <li className="mb-6 flex items-center" key={feature}>
                         <span className="ml-2 text-sm text-white">
                           {feature}
                         </span>
@@ -101,7 +101,7 @@ function Pricing() {
                 <div className="mt-7 border-t border-[#6e25c0] pt-5 text-center">
                   <ul className="mb-10">
                     {subscriptions[2][2].map((feature) => (
-                      <li className="mb-6 flex items-center">
+                      <li className="mb-6 flex items-center" key={feature}>
                         <span className="ml-2 text-sm text-white">
                           {feature}
                         </span>

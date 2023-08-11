@@ -4,7 +4,11 @@ export default function Products() {
   return (
     <div className="container mx-auto">
       <div className="container mt-10 m-auto grid lg:grid-cols-2 gap-2">
-        <img className="h-full w-full" src={neptaverse} alt="" />
+        <img
+          className="h-full w-full rounded-3xl hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-50"
+          src={neptaverse}
+          alt="Neptaverse"
+        />
         <div className=" ml-2 flex flex-col" style={{ marginTop: '100px' }}>
           <h3 className="text-[#864bc9] text-2xl font-bold mb-5 home-heading">
             Neptaverse

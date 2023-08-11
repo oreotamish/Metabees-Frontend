@@ -1,50 +1,35 @@
 import { useState } from 'react'
 import './waitlist.css'
+import axios from 'axios'
 
 export default function Waitlist() {
   const [isModalOpen, setModalOpen] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
 
-  const onSubmit = async (e) => {
-    e.preventDefault()
+  const onSubmit = async () => {
+    if (!name || !email) {
+      alert('Please fill all the fields')
+      return
+    }
 
     try {
-      let res = await fetch('http://localhost:3000/waitlist', {
-        method: 'POST',
-        body: JSON.stringify({
-          name: name,
+      await axios.post(
+        'http://localhost:3000/waitlist',
+        {
           email: email,
-        }),
-      })
-      let resJson = await res.json()
-      if (res.status === 200) {
-        setName('')
-        setEmail('')
-        setModalOpen(true)
-        setTimeout(() => {
-          setModalOpen(false)
-        }, 10000)
-      } else {
-        alert(resJson.message)
-      }
+          name: name,
+        },
+        { withCredentials: true }
+      )
+      setName('')
+      setEmail('')
+      setModalOpen(true)
+      setTimeout(() => {
+        setModalOpen(false)
+      }, 10000)
     } catch (err) {
       console.log(err)
-    }
-  }
-
-  // Check whether the input fields are empty or not
-  // If empty, show error message
-  // If not empty, send the data to the backend
-  // If the data is sent successfully, show the modal
-  // If the data is not sent successfully, show the error message
-  const validate = () => {
-    const name = document.getElementsByName('name')[0].value
-    const email = document.getElementsByName('email')[0].value
-    if (name === '' || email === '') {
-      alert('Please fill all the fields')
-    } else {
-      onSubmit()
     }
   }
 
@@ -62,6 +47,7 @@ export default function Waitlist() {
             <input
               className="waitlist-input-mail"
               value={name}
+              name="name"
               type="text"
               placeholder="Enter name"
               onChange={(e) => setName(e.target.value)}
@@ -80,12 +66,13 @@ export default function Waitlist() {
             <input
               className="waitlist-input-pwd"
               value={email}
+              name="email"
               type="e-mail"
               placeholder="Enter e-mail"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <button type="button" className="waitlist-submit" onClick={validate}>
+          <button type="button" className="waitlist-submit" onClick={onSubmit}>
             <span className="sign-text">Join waitlist</span>
           </button>
         </form>

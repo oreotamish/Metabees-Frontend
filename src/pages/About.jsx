@@ -2,6 +2,11 @@
 
 import TeamCard from '../components/TeamCard'
 import { useNavigate } from 'react-router-dom'
+import about1 from '../assets/about1.jpg'
+import about2 from '../assets/about2.jpg'
+import Adi from '../assets/Adi.jpg'
+import Manas from '../assets/Manas.jpg'
+import Suvigya from '../assets/Suvigya.jpg'
 
 function About() {
   const navigate = useNavigate()
@@ -55,44 +60,25 @@ function About() {
         {/* TEAM */}
         <div className="grid grid-cols-1 gap-4 gap-y-6 border-b border-[#b865db] py-12 pb-20 md:grid-cols-2 lg:grid-cols-4">
           <TeamCard
-            name="Jordi Santiago"
-            role="Front-end developer"
-            linkedinlink="https://www.linkedin.com/company/metabees-in/"
+            name="Aditya Ranjan"
+            role="Full Stack Developer"
+            linkedinlink="https://www.linkedin.com/in/aditya-ranjan-577242252/"
+            githublink="https://github.com/adityar2705"
+            photo={Adi}
           />
           <TeamCard
-            name="Kerim Fahri"
-            role="Back-end developer"
-            linkedinlink="https://www.linkedin.com/company/metabees-in/"
+            name="Manas Bhasin"
+            role="Founder"
+            linkedinlink="https://www.linkedin.com/in/manas-bhasin-00b7a1250/"
+            githublink="https://github.com/Manasbh"
+            photo={Manas}
           />
           <TeamCard
-            name="Deepika Ramesh"
-            role="Front-end developer"
-            linkedinlink="https://www.linkedin.com/company/metabees-in/"
-          />
-          <TeamCard
-            name="Thilde Olaisen"
-            role="Marketing Lead"
-            linkedinlink="https://www.linkedin.com/company/metabees-in/"
-          />
-          <TeamCard
-            name="Sadie Lewis"
-            role="Sales"
-            linkedinlink="https://www.linkedin.com/company/metabees-in/"
-          />
-          <TeamCard
-            name="Gabrielle Fernandez"
-            role="Sales"
-            linkedinlink="https://www.linkedin.com/company/metabees-in/"
-          />
-          <TeamCard
-            name="Kerim Fahri"
-            role="Back-end developer"
-            linkedinlink="https://www.linkedin.com/company/metabees-in/"
-          />
-          <TeamCard
-            name="Kerim Fahri"
-            role="Back-end developer"
-            linkedinlink="https://www.linkedin.com/company/metabees-in/"
+            name="Suvigya Mishra"
+            role="Full Stack Developer"
+            linkedinlink="https://www.linkedin.com/in/suvigyamishra/"
+            githublink="https://github.com/Crazyhaller"
+            photo={Suvigya}
           />
         </div>
         {/* Hiring Banner */}
@@ -118,11 +104,7 @@ function About() {
             </button>
           </div>
           <div className="md:mt-o mt-10 w-full">
-            <img
-              src="https://images.unsplash.com/photo-1605165566807-508fb529cf3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-              alt="Getting Started"
-              className="rounded-lg"
-            />
+            <img src={about1} alt="Getting Started" className="rounded-lg" />
           </div>
         </div>
       </div>

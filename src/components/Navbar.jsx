@@ -189,7 +189,7 @@ function Navbar() {
                 <button
                   type="button"
                   className="login-btn mt-5"
-                  onClick={() => navigate('/signup')}
+                  onClick={() => navigate('/waitlist')}
                 >
                   Sign Up
                 </button>

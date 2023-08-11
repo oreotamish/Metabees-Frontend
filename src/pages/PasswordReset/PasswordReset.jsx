@@ -1,4 +1,4 @@
-import { useEffect, useState, Fragment } from 'react'
+import { useState, Fragment } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import styles from './styles.module.css'
@@ -26,6 +26,7 @@ const PasswordReset = () => {
       ) {
         setError(error.response.data.message)
         setMsg('')
+        setValidUrl(false)
       }
     }
   }

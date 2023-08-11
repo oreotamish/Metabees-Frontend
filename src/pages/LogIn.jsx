@@ -5,17 +5,13 @@ import { useContext } from 'react'
 import { UserContext } from '../UserContext'
 import './LogIn.css'
 import { getCookieInfo } from '../getCookie'
-
 function LogIn() {
   const navigate = useNavigate()
   const { setUserInfo } = useContext(UserContext)
-
   const logIn = async (e) => {
     e.preventDefault()
-
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
-
     await Axios.post(
       'http://localhost:3000/auth/login',
       {
@@ -35,7 +31,6 @@ function LogIn() {
         console.log(e)
       })
   }
-
   return (
     <div class="login-card">
       <div class="login-card2">
@@ -104,5 +99,4 @@ function LogIn() {
     </div>
   )
 }
-
 export default LogIn
