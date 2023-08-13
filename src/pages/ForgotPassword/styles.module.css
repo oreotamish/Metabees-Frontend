@@ -1,4 +1,4 @@
-.container {
+.forgotpasscontainer {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.form_container {
+.forgotpassform_container {
   width: 400px;
   padding: 10px;
   background-color: white;
@@ -18,7 +18,7 @@
     0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
-.input {
+.forgotpassinput {
   outline: none;
   border: none;
   width: 370px;
@@ -29,7 +29,7 @@
   font-size: 14px;
 }
 
-.purple_btn {
+.forgotpasspurple_btn {
   border: none;
   outline: none;
   padding: 12px 0;
@@ -43,8 +43,8 @@
   margin: 10px auto;
 }
 
-.error_msg,
-.success_msg {
+.forgotpasserror_msg,
+.forgotpasssuccess_msg {
   width: 370px;
   padding: 15px;
   margin: 5px 0;
@@ -55,6 +55,6 @@
   text-align: center;
 }
 
-.success_msg {
+.forgotpasssuccess_msg {
   background-color: #60dd5c;
 }

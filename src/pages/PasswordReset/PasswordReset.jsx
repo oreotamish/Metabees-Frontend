@@ -34,8 +34,11 @@ const PasswordReset = () => {
   return (
     <Fragment>
       {validUrl ? (
-        <div className={styles.container}>
-          <form className={styles.form_container} onSubmit={handleSubmit}>
+        <div className={styles.passresetcontainer}>
+          <form
+            className={styles.passresetform_container}
+            onSubmit={handleSubmit}
+          >
             <h1>Add New Password</h1>
             <input
               type="password"
@@ -44,11 +47,11 @@ const PasswordReset = () => {
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               required
-              className={styles.input}
+              className={styles.passresetinput}
             />
-            {error && <div className={styles.error_msg}>{error}</div>}
-            {msg && <div className={styles.success_msg}>{msg}</div>}
-            <button type="submit" className={styles.green_btn}>
+            {error && <div className={styles.passreseterror_msg}>{error}</div>}
+            {msg && <div className={styles.passresetsuccess_msg}>{msg}</div>}
+            <button type="submit" className={styles.passresetgreen_btn}>
               Submit
             </button>
           </form>

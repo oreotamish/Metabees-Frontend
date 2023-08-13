@@ -27,8 +27,8 @@ const ForgotPassword = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <form className={styles.form_container} onSubmit={handleSubmit}>
+    <div className={styles.forgotpasscontainer}>
+      <form className={styles.forgotpassform_container} onSubmit={handleSubmit}>
         <h1>Forgot Password</h1>
         <input
           type="email"
@@ -37,11 +37,11 @@ const ForgotPassword = () => {
           onChange={(e) => setEmail(e.target.value)}
           value={email}
           required
-          className={styles.input}
+          className={styles.forgotpassinput}
         />
-        {error && <div className={styles.error_msg}>{error}</div>}
-        {msg && <div className={styles.success_msg}>{msg}</div>}
-        <button type="submit" className={styles.purple_btn}>
+        {error && <div className={styles.forgotpasserror_msg}>{error}</div>}
+        {msg && <div className={styles.forgotpasssuccess_msg}>{msg}</div>}
+        <button type="submit" className={styles.forgotpasspurple_btn}>
           Submit
         </button>
       </form>
